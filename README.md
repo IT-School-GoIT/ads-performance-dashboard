@@ -1,54 +1,64 @@
-# Ads Performance Dashboard
+# Revenue & Churn Analysis Dashboard
 
-This project presents an advertising performance dashboard built in **Tableau Public**, based on enriched data from **Facebook Ads** and **Google Ads**. SQL joins were executed via **DBeaver** to combine campaign and ad set level data, enabling deeper analysis.
+This project showcases a visual analysis of customer behavior over time using SQL queries and Tableau Public. The goal was to identify revenue trends, user churn, LTV, and user segmentation to support strategic product decisions.
 
 ## 🎯 Project Goals
 
-- Merge advertising data from Facebook Ads and Google Ads
-- Calculate key marketing metrics
-- Visualize insights through Tableau Public dashboard
+- Calculate detailed MRR components (new, expansion, contraction, churn)
+- Identify churned and resurrected users
+- Analyze user lifetime value (LTV)
+- Segment users by language, game, device type, and age
+- Present all metrics via Tableau dashboard
 
 ## 📊 Key Metrics Displayed
 
-- **CPC** – Cost Per Click (SUM(cost)/SUM(clicks))
-- **CPM** – Cost Per 1000 Impressions
-- **CTR** – Click-Through Rate
-- **ROMI** – Return on Marketing Investment
-- Total Spend and Revenue
-- Conversions per Campaign
-- Monthly Trends by Campaign Name
+- **MRR Breakdown** – New, Expansion, Contraction, Churn
+- **Churn Rate** over time
+- **Resurrected Users**
+- **Top 30 Users by LTV**
+- **LTV by Segment** (language, age, game_name, device type)
+- **Revenue Heatmap**
 
-## 🧩 SQL Data Preparation
+## 🧩 SQL Logic
 
-Using **DBeaver**, we enriched and joined ad data from Facebook and Google sources using:
-- `campaign_name`
-- `adset_name`
+SQL queries were executed via **DBeaver** in **PostgreSQL**, and include:
+- `LAG`, `LEAD` window functions
+- Classification of users into churned, new, resurrected
+- Monthly revenue aggregation
+- User-level LTV computation
 
-This approach allowed for a cleaner and more reliable dataset, compared to relying on UTM parameters.
+### SQL View Used
 
-## 🖼️ Dashboard Preview
+A PostgreSQL view `babenko_enhanced_metrics` was created using this logic:  
+📄 [sql_join.sql](sql_queries/sql_join.sql)
+
+### SQL Preview
+
+![SQL Screenshot](screenshots/sql_join.png)
+
+## 📊 Dashboard Preview
 
 ![Dashboard Screenshot](screenshots/dashboard_view.png)
 
-## 🛠 SQL Query Preview
-
-![SQL Query Screenshot](screenshots/sql_join.png)
-
 ## ▶️ Video Demonstration
 
-Watch the project demo on YouTube:  
+Watch the walkthrough video:  
 👉 [https://youtu.be/gkC3pP_tc1w](https://youtu.be/iWqqd7ZRQrI?si=ymnR-uqnI3U2n1rK)
 
 ## 🔗 Tableau Public Dashboard
 
-👉 [View Tableau Dashboard](https://public.tableau.com/views/final_DA_17525341835200/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+👉 [View on Tableau Public](https://public.tableau.com/views/final_DA_17525341835200/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
 ## 🛠 Technologies Used
 
-- **PostgreSQL** – SQL joins and data preparation  
-- **DBeaver** – SQL execution  
-- **Tableau Public** – Dashboard creation  
-- **GitHub** – Project hosting and documentation  
+- **PostgreSQL** — data processing  
+- **DBeaver** — SQL query development  
+- **Tableau Public** — dashboard visualization  
+- **GitHub** — documentation & version control
 
 ## 📦 Folder Structure
 
+
+## 📣 Author
+
+Anton Babenko — Data Science & Analytics student @ GoIT
