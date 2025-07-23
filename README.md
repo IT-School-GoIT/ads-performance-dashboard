@@ -58,6 +58,14 @@ Watch the walkthrough video:
 
 ## 📦 Folder Structure
 
+revenue-churn-dashboard/
+├── sql_queries/
+│ └── sql_join.sql
+├── screenshots/
+│ ├── dashboard_view.png
+│ └── sql_join.png
+└── README.md
+
 
 ## 📣 Author
 
