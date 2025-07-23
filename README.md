@@ -61,4 +61,4 @@ Watch the walkthrough video:
 
 ## 📣 Author
 
-Anton Babenko — Data Science & Analytics student @ GoIT
+Anton Babenko — Data Science & Analytics student IT School GoIT
